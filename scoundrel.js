@@ -170,9 +170,15 @@ function run() {
 function checkGameOver() {
     if (gameState.health <= 0) {
         alert('Game Over! You died.');
+        newGame();
     }
 }
 
+function newGame() {
+    Object.assign(gameState, setupGame());
+    revealRoom(4);
+    stateChecks();
+}
 const gameState = setupGame();
 revealRoom(4);
 console.log(gameState);
@@ -182,7 +188,5 @@ document.querySelector('#run').addEventListener('click', () => {
 });
 
 document.querySelector('#new-game').addEventListener('click', () => {
-    Object.assign(gameState, setupGame());
-    revealRoom(4);
-    stateChecks();
+    newGame();
 });
