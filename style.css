@@ -1,0 +1,35 @@
+body {
+    background-color: rgb(70, 94, 113);
+    margin: auto;
+    padding: 3%
+}
+
+.Dungeon {
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    gap: 0.2%;
+    width: 50%;
+    height: 30vh;
+}
+
+.Dungeon img {
+    height: 100%;
+}
+
+.Weapon {
+    display: flex;
+    margin: auto;
+    min-width: auto;
+    height: 30vh;
+}
+
+.Weapon img {
+    height: 100%;
+}
+
+.info {
+    margin:auto;
+    text-align: center;
+    color:white;
+}
