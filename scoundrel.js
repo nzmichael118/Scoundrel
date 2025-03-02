@@ -95,7 +95,7 @@ function handleCardClick(card, cardElement) {
             } else if (damage < gameState.discardPile[gameState.discardPile.length - 1].value) {
                 canWeapon = true;
             }
-             canWeapon = canWeapon ? confirm(`Do you want to use your weapon (${gameState.equippedWeapon.value}) against ${damage}?`) : false;
+            canWeapon = canWeapon ? confirm(`Do you want to use your weapon (${gameState.equippedWeapon.value}) against ${damage}?`) : false;
             if (canWeapon) {
                 console.log(`Fighting with weapon ${gameState.equippedWeapon.value}`);
                 damage -= gameState.equippedWeapon.value;
@@ -135,10 +135,11 @@ function renderTextDetails() {
 }
 
 function renderWeapon() {
+    const weaponDiv = document.querySelector('.Weapon');
+    weaponDiv.innerHTML = '';
     if (gameState.equippedWeapon) {
         let card = gameState.equippedWeapon;
-        const weaponDiv = document.querySelector('.Weapon');
-        weaponDiv.innerHTML = '';
+
         // Weapon Card
         let cardElement = generateCardHTML(card);
         weaponDiv.appendChild(cardElement);
